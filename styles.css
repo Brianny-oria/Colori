@@ -1,0 +1,128 @@
+/* General */
+
+{
+    box-sizing:border-box;
+}
+
+body {
+    font-family: Times New Roman, serif;
+    background-color: #faf9fc;
+    color: #333333;
+    margin: 0;
+}
+
+/* Encabezado */
+
+header {
+    text-align: center;
+    padding: 25px 20px 15px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: #6371a2;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #777777;
+    font-size: 16px;
+}
+
+/* Contenido principal */
+
+main { 
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*Seccion de generador de colores*/
+
+section {
+    background-color: #ffffff; 
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    border: 1px solid #D9E7F8;
+}
+
+section h2 {
+    color: #56021E;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+/* Paleta de colores*/
+
+#paleta {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+/* Tarjetas de colores*/
+
+.color-card {
+    text-align: center;
+}
+
+.color-preview {
+    height: 150px;
+    background-color: #D9E7F8;
+    border-radius: 10px;
+}
+
+.color-code { 
+    font-size: 15px;
+    color: #555555;
+    margin-top: 12px;
+}
+
+
+/* Selector de colores */
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+select {
+    padding: 10px 15px;
+    border: 1px solid #6371A2;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Botón de generar colores */
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6371A2;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #56021E;
+
+}
+
+/* Pie de página */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #888888;
+    font-size: 14px;
+}
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Colores</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="colores.js"></script>
+</head>
+
+<body>
+    
+    <header>
+
+        <h1>Colori</h1>
+        <p>Encuentra nuevas combinaciones para inspirar tus ideas.</p>
+    
+    </header>
+
+    <main>
+
+        <section>
+         
+            <h2>Explora los colores</h2>
+
+         <label for="cantidad-colores">Número de tonos:</label>
+
+         <select name="cantidad-colores" id="cantidad-colores">
+           
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+
+         </select>
+
+         <button type="button" id="generar-paleta">Generar paleta</button>
+        
+        </section>
+
+        <section>
+            
+            <h2>Tu paleta de colores</h2>
+
+            <div id="paleta">
+
+                <div class="color-card">
+                    
+                    <div class="color-preview"></div>
+                    <p class="color-code">#D9E7F8</p>
+                
+                </div>
+                         
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Generador de paletas de colores</p>
+    </footer>
+
+</body>
+</html>
