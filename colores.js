@@ -10,6 +10,35 @@ const contenedorPaleta = document.getElementById("paleta");
 console.log(selectorCantidad);
 
 
+// Crear tarjeta de color
+
+function crearTarjeta(color) {
+
+const tarjeta = document.createElement("div");
+tarjeta.classList.add("color-card");
+
+
+const vistaColor = document.createElement("div");
+vistaColor.classList.add("color-preview");
+vistaColor.style.backgroundColor = color;
+
+
+const codigoColor = document.createElement("p");
+codigoColor.classList.add("color-code");
+codigoColor.textContent = color;
+
+tarjeta.appendChild(vistaColor);
+tarjeta.appendChild(codigoColor);
+
+return tarjeta;
+}
+
+// Comprobar creación de la tarjeta
+
+console.log(crearTarjeta("hsl(120, 50%, 60%)"));
+
+
+
 // Generar un color aleatorio al hacer clic en el botón
 
 function generarColor() {
@@ -30,9 +59,16 @@ function generarColor() {
 
 boton.addEventListener("click", function() {
     const cantidad = Number(selectorCantidad.value);
-    
-    console.log(generarPaleta(cantidad));
 
+    const colores = generarPaleta(cantidad);
+
+    contenedorPaleta.innerHTML = "";
+
+    colores.forEach(function(color) {
+        const tarjeta = crearTarjeta(color);
+
+        contenedorPaleta.appendChild(tarjeta);
+    });
 });
 
 
