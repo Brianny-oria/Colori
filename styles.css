@@ -57,20 +57,20 @@ section h2 {
 
 #paleta {
     display: flex;
-    grid-template-columns: repeat(9, 1fr);
+    justify-content: center;
     gap: 15px;
+    margin-top: 25px;
 }
 
 /* Tarjetas de colores*/
 
 .color-card {
     text-align: center;
-    flex: 1;
-    max-width: 100px;
+    flex: 0 0 90px;
 }
 
 .color-preview {
-    height: 150px;
+    height: 190px;
     border-radius: 10px;
 }
 
