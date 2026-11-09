@@ -9,32 +9,85 @@ const botonHEX = document.getElementById("formato-hex");
 let colores = [];
 let formato = "HSL";
 
-
+    
 // Crear tarjetas de colores
 
 function crearTarjeta(color) {
-
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("color-card");
 
     const vistaColor = document.createElement("div");
     vistaColor.classList.add("color-preview");
 
-    const colorHSL = "hsl(" + color.h + ", " + color.s + "%, " + color.l + "%)";
+    
+    // Crear botón para bloquear el color
+   
+    const botonBloqueo = document.createElement("button");
+    botonBloqueo.classList.add("boton-bloqueo");
+    botonBloqueo.setAttribute("aria-label", "Bloquear o desbloquear color");
 
+    function actualizarCandado() {
+    if (color.bloqueado) {
+        botonBloqueo.innerHTML = `
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+            </svg>
+        `;
+    } else {
+        botonBloqueo.innerHTML = `
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="10" width="14" height="11" rx="2"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0"/>
+            </svg>
+        `;
+    }
+}
+
+actualizarCandado();
+
+botonBloqueo.addEventListener("click", function() {
+    color.bloqueado = !color.bloqueado;
+    actualizarCandado();
+});
+
+vistaColor.appendChild(botonBloqueo);
+
+    const colorHSL = "hsl(" + color.h + ", " + color.s + "%, " + color.l + "%)";
     vistaColor.style.backgroundColor = colorHSL;
 
     const codigo = document.createElement("p");
     codigo.classList.add("color-code");
 
+    let botonCopiar = null;
+
     if (formato === "HSL") {
         codigo.textContent = colorHSL;
     } else {
-        codigo.textContent = hslAHex(color.h, color.s, color.l);
+        const colorHEX = hslAHex(color.h, color.s, color.l);
+        codigo.textContent = colorHEX;
+
+        botonCopiar = document.createElement("button");
+        botonCopiar.textContent = "Copiar código";
+        botonCopiar.classList.add("boton-copiar");
+
+        botonCopiar.addEventListener("click", function() {
+            navigator.clipboard.writeText(colorHEX).then(function() {
+                botonCopiar.textContent = "¡Copiado!";
+
+                setTimeout(function() {
+                    botonCopiar.textContent = "Copiar código";
+                }, 1500);
+            });
+        });
     }
 
     tarjeta.appendChild(vistaColor);
     tarjeta.appendChild(codigo);
+
+    if (botonCopiar !== null) {
+        tarjeta.appendChild(botonCopiar);
+    }
 
     return tarjeta;
 }
@@ -51,7 +104,8 @@ function generarColor() {
     return {
         h: tono,
         s: saturacion,
-        l: luminosidad
+        l: luminosidad,
+        bloqueado: false
     };
 }
 
@@ -69,7 +123,7 @@ function hslAHex(h, s, l) {
         const c = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
 
         return Math.round(255 * c).toString(16).padStart(2, "0");
-    }
+        }
 
     return ("#" + convertir(0) + convertir(8) + convertir(4)).toUpperCase();
 }
@@ -95,11 +149,18 @@ function generarPaleta(cantidad) {
     const paleta = [];
 
     for (let i = 0; i < cantidad; i++) {
-        paleta.push(generarColor());
+        
+        if (colores[i] && colores[i].bloqueado) {
+            paleta.push(colores[i]);
+            } else {
+            paleta.push(generarColor());
+        }
+
     }
 
     return paleta;
 }
+
 
 // Mostrar la paleta de colores
 
