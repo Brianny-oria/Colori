@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Times New Roman, serif;
+    font-family: "Poppins", sans-serif;
     background-color: #faf9fc;
     color: #333333;
     margin: 0;
@@ -148,7 +148,7 @@ footer {
 /* Distribución de los controles */
 .controles {
     display: flex;
-    justify-content: space-start;
+    justify-content: flex-start;
     align-items: flex-end;
     gap: 60px;
 }
