@@ -1,6 +1,6 @@
 /* General */
 
-{
+* {
     box-sizing:border-box;
 }
 
@@ -69,7 +69,6 @@ section h2 {
 
 .color-preview {
     height: 150px;
-    background-color: #D9E7F8;
     border-radius: 10px;
 }
 
