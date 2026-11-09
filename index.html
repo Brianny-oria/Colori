@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colori | Generador de paletas</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
     <script src="colores.js" defer></script>
 </head>
@@ -24,19 +29,46 @@
          
             <h2>Explora los colores</h2>
 
-         <label for="cantidad-colores">Número de tonos:</label>
+            <div class="controles">
 
-         <select name="cantidad-colores" id="cantidad-colores">
-           
-            <option value="6">6</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
+    <div class="grupo-generador">
 
-         </select>
+        <div class="selector-cantidad">
 
-         <button type="button" id="generar-paleta">
+    <label for="cantidad-colores">Número de tonos:</label>
+
+    <select name="cantidad-colores" id="cantidad-colores">
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    </div>
+
+        <button type="button" id="generar-paleta">
             Generar paleta
         </button>
+
+    </div>
+
+    <div class="grupo-formato">
+
+    <p>Formato:</p>
+
+    <div class="botones-formato">
+
+        <button type="button" id="formato-hsl">
+            HSL
+        </button>
+
+        <button type="button" id="formato-hex">
+            HEX
+        </button>
+
+    </div>
+
+</div>
+
+
         
         </section>
 

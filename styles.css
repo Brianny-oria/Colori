@@ -19,7 +19,9 @@ header {
 }
 
 header h1 {
-    font-size: 42px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
     color: #6371a2;
     margin-bottom: 10px;
 }
@@ -48,8 +50,10 @@ section {
 }
 
 section h2 {
+     font-family: 'Poppins', sans-serif;
     color: #56021E;
     font-size: 22px;
+    font-weight: 600;
     margin-top: 0;
 }
 
@@ -108,6 +112,7 @@ button {
     color: #ffffff;
     font-size: 15px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
@@ -132,3 +137,63 @@ footer {
     font-size: 14px;
 }
 
+/* Distribución de los controles */
+.controles {
+    display: flex;
+    justify-content: space-start;
+    align-items: flex-end;
+    gap: 60px;
+}
+
+/* Grupo del selector y botón generador */
+.grupo-generador {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Selector de cantidad */
+.selector-cantidad {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Grupo de formato */
+.grupo-formato p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+/* Botones HSL y HEX */
+.botones-formato {
+    display: flex;
+    gap: 8px;
+}
+
+/* Formato seleccionado */
+button.activo {
+    background-color: #56021E;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Animación de aparición de las tarjetas */
+
+.color-card {
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
