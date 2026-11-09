@@ -17,7 +17,7 @@
 <body>
     
     <header>
-
+        
         <h1>Colori</h1>
         <p>Encuentra nuevas combinaciones para inspirar tus ideas.</p>
     
@@ -42,6 +42,8 @@
         <option value="8">8</option>
         <option value="9">9</option>
     </select>
+    
+
     </div>
 
         <button type="button" id="generar-paleta">
@@ -68,15 +70,26 @@
 
 </div>
 
+<button type="button" id="guardar-paleta">
+    Guardar paleta
+</button>
+
 
         
         </section>
 
-        <section>
-            
-        <div id="paleta"></div>
+        <section class="seccion-paleta">
+
+            <div id="paleta"></div>
 
         </section>
+
+        <section class="seccion-historial">
+    <h2>Mis paletas guardadas</h2>
+    <div id="historial-paletas"></div>
+</section>
+            
+            
 
     </main>
 

@@ -5,9 +5,15 @@ const selectorCantidad = document.getElementById("cantidad-colores");
 const contenedorPaleta = document.getElementById("paleta");
 const botonHSL = document.getElementById("formato-hsl");
 const botonHEX = document.getElementById("formato-hex");
+const botonGuardar = document.getElementById("guardar-paleta");
 
 let colores = [];
 let formato = "HSL";
+
+
+// Recuperar el historial de paletas guardadas
+
+let historialPaletas = JSON.parse(localStorage.getItem("historialColori")) || [];
 
     
 // Crear tarjetas de colores
@@ -20,7 +26,7 @@ function crearTarjeta(color) {
     vistaColor.classList.add("color-preview");
 
     
-    // Crear botón para bloquear el color
+// Crear botón para bloquear el color
    
     const botonBloqueo = document.createElement("button");
     botonBloqueo.classList.add("boton-bloqueo");
@@ -176,6 +182,55 @@ function mostrarPaleta() {
 
 }
 
+
+// Mostrar el historial de paletas guardadas
+
+function mostrarHistorial() {
+    const contenedorHistorial = document.getElementById("historial-paletas");
+
+    contenedorHistorial.innerHTML = "";
+
+    historialPaletas.forEach(function(paleta, indice) {
+
+        const tarjetaHistorial = document.createElement("div");
+        tarjetaHistorial.classList.add("tarjeta-historial");
+
+        const miniPaleta = document.createElement("div");
+        miniPaleta.classList.add("mini-paleta");
+
+        paleta.forEach(function(color) {
+            const muestra = document.createElement("div");
+
+            muestra.style.backgroundColor =
+                "hsl(" + color.h + ", " + color.s + "%, " + color.l + "%)";
+
+            miniPaleta.appendChild(muestra);
+        });
+
+        const botonCargar = document.createElement("button");
+        botonCargar.textContent = "Volver a usar";
+
+        botonCargar.addEventListener("click", function() {
+            colores = paleta.map(function(color) {
+                return {
+                    h: color.h,
+                    s: color.s,
+                    l: color.l,
+                    bloqueado: color.bloqueado
+                };
+            });
+
+            selectorCantidad.value = colores.length;
+            mostrarPaleta();
+        });
+
+        tarjetaHistorial.appendChild(miniPaleta);
+        tarjetaHistorial.appendChild(botonCargar);
+
+        contenedorHistorial.appendChild(tarjetaHistorial);
+    });
+}
+
 // Cambiar el formato a HSL
 
 botonHSL.addEventListener("click", function() {
@@ -197,4 +252,37 @@ botonHEX.addEventListener("click", function() {
     botonHSL.classList.remove("activo");
 
     mostrarPaleta();
+});
+
+
+// Mostrar las paletas guardadas al abrir la página
+
+mostrarHistorial();
+
+
+
+// Guardar una paleta en el historial
+
+botonGuardar.addEventListener("click", function() {
+
+    if (colores.length === 0) {
+        alert("Primero genera una paleta.");
+        return;
+    }
+
+    const nuevaPaleta = colores.map(function(color) {
+        return {
+            h: color.h,
+            s: color.s,
+            l: color.l,
+            bloqueado: color.bloqueado
+        };
+    });
+
+    historialPaletas.push(nuevaPaleta);
+
+    localStorage.setItem("historialColori", JSON.stringify(historialPaletas));
+    mostrarHistorial();
+
+
 });

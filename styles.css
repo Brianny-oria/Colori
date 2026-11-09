@@ -62,15 +62,21 @@ section h2 {
 #paleta {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     margin-top: 25px;
+    width: max-content;
+    margin-left: 50%;
+    padding-left: 25px;
+    padding-right: 25px;
+    transform: translateX(-50%);
 }
 
 /* Tarjetas de colores*/
 
 .color-card {
     text-align: center;
-    flex: 0 0 90px;
+    flex: 0 0 130px;
+    width: 130px;
 }
 
 .color-preview {
@@ -80,9 +86,10 @@ section h2 {
 }
 
 .color-code { 
-    font-size: 15px;
+    font-size: 14px;
     color: #555555;
     margin-top: 12px;
+    white-space: nowrap;
 }
 
 
@@ -232,4 +239,54 @@ button:active {
     font-size: 18px;
     cursor: pointer;
     box-shadow: none;
+}
+
+.seccion-paleta {
+    background-color: transparent;
+    border: none;
+    padding: 20px 0;
+}
+
+
+/* Historial de paletas guardadas */
+
+.seccion-historial {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#historial-paletas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.tarjeta-historial {
+    width: 180px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mini-paleta {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mini-paleta div {
+    flex: 1;
+}
+
+.tarjeta-historial button {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
