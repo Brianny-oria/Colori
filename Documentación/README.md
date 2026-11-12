@@ -8,7 +8,7 @@ Además, se pueden bloquear los colores que más nos gusten para conservarlos al
 ## Aplicación publicada
 Puedes probar Colori desde el siguiente enlace:
 
-https://brianny-oria.github.io/Colori/
+https://brianny-oria.github.io/ProyectoM1_BriannyOria/
 
 
 ## Uso de la aplicación
