@@ -113,28 +113,28 @@ A continuación, se muestran capturas de las principales funcionalidades de Colo
 
 ### 1. Página de inicio
 
-![Página de inicio](./Capturas-flujo/00-pagina-inicio.png)
+![Página de inicio](Documentación/Capturas-flujo/00-pagina-inicio.png)
 
 ### 2. Generación de una paleta
 
-![Generación de paleta](./Capturas-flujo/01-generacion-paleta.png)
+![Generación de paleta](Documentación/Capturas-flujo/01-generacion-paleta.png)
 
 ### 3. Bloqueo de un color
 
-![Bloqueo de color](./Capturas-flujo/02-bloqueo-color.png)
+![Bloqueo de color](Documentación/Capturas-flujo/02-bloqueo-color.png)
 
 ### 4. Selector de cantidad de colores
 
-![Selector de cantidad](./Capturas-flujo/04-selector-cantidad.png)
+![Selector de cantidad](Documentación/Capturas-flujo/04-selector-cantidad.png)
 
 ### 5. Cambio de formato HSL a HEX
 
-![Formato HEX](./Capturas-flujo/03-formato-hex.png)
+![Formato HEX](Documentación/Capturas-flujo/03-formato-hex.png)
 
 ### 6. Guardar una paleta
 
-![Paleta guardada](./Capturas-flujo/05-paleta-guardada.png)
+![Paleta guardada](Documentación/Capturas-flujo/05-paleta-guardada.png)
 
 ### 7. Recuperar una paleta
 
-![Paleta recuperada](./Capturas-flujo/06-paleta-recuperada.png)
+![Paleta recuperada](Documentación/Capturas-flujo/06-paleta-recuperada.png)
