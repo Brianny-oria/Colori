@@ -36,28 +36,24 @@ Si quieres probar Colori desde tu computadora, puedes descargar el proyecto desd
 
 3. Si no cuentas con Live Server, instala esta extensión de VS Code.
 
-4. Hacer clic derecho sobre index.html y seleccionar **Open with Live Server**.
+4. Ingresar a la carpeta Desarrollo.
 
-5. La aplicación se abrirá en el navegador y podrás utilizar sus funciones.
+5. Hacer clic derecho sobre index.html y seleccionar Open with Live Server.
 
 
 ### Pasos para realizar el despliegue
 
-Para publicar Colori en GitHub Pages, se deben seguir estos pasos:
+Para publicar Colori en GitHub Pages, se utiliza GitHub Actions mediante un archivo de configuración ubicado en `.github/workflows/deploy.yml`.
+
+Los pasos para realizar el despliegue son:
 
 1. Subir los archivos del proyecto a un repositorio de GitHub.
-
 2. Ingresar al repositorio y abrir la sección **Settings**.
-
 3. Seleccionar la opción **Pages** en el menú lateral.
-
-4. En el apartado **Build and deployment**, elegir **Deploy from a branch**.
-
-5. Seleccionar la rama master y la carpeta / (root).
-
-6. Hacer clic en **Save** para guardar los cambios.
-
-7. Esperar a que GitHub Pages publique el sitio. Una vez finalizado, se podrá acceder a la aplicación mediante el enlace generado.
+4. En el apartado **Build and deployment**, seleccionar **GitHub Actions** como fuente de publicación.
+5. Subir los cambios a la rama `master`. El archivo `deploy.yml` ejecutará automáticamente el proceso de publicación.
+6. Ingresar a la sección **Actions** para comprobar que el proceso haya finalizado correctamente.
+7. Una vez completado el despliegue, se podrá acceder a la aplicación mediante el enlace de GitHub Pages.
 
 
 ## Decisiones técnicas
@@ -102,4 +98,37 @@ Durante el desarrollo del proyecto utilicé ChatGPT como herramienta de apoyo pa
 
 Me ayudó a analizar y comprender fragmentos de código, así como a trabajar en funcionalidades como la generación de colores, el bloqueo de tonos, la copia de códigos HEX y el almacenamiento de paletas.
 
-[Ver más detalle: Documentación del uso de IA](./documentacion-IA.md)
+[Ver documentación del uso de IA](./documentacion-IA.md)
+
+
+## Flujo de la aplicación
+
+A continuación, se muestran capturas de las principales funcionalidades de Colori:
+
+### 1. Página de inicio
+
+![Página de inicio](./Capturas-flujo/00-pagina-inicio.png)
+
+### 2. Generación de una paleta
+
+![Generación de paleta](./Capturas-flujo/01-generacion-paleta.png)
+
+### 3. Bloqueo de un color
+
+![Bloqueo de color](./Capturas-flujo/02-bloqueo-color.png)
+
+### 4. Selector de cantidad de colores
+
+![Selector de cantidad](./Capturas-flujo/04-selector-cantidad.png)
+
+### 5. Cambio de formato HSL a HEX
+
+![Formato HEX](./Capturas-flujo/03-formato-hex.png)
+
+### 6. Guardar una paleta
+
+![Paleta guardada](./Capturas-flujo/05-paleta-guardada.png)
+
+### 7. Recuperar una paleta
+
+![Paleta recuperada](./Capturas-flujo/06-paleta-recuperada.png)
