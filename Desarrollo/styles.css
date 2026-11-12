@@ -39,7 +39,7 @@ main {
     padding: 20px;
 }
 
-/*Seccion de generador de colores*/
+/* Seccion de generador de colores */
 
 section {
     background-color: #ffffff; 
@@ -192,7 +192,7 @@ button:active {
 
 .color-card {
     animation: aparecer 0.5s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .color-card:hover {
@@ -229,6 +229,8 @@ button:active {
     color: #ffffff;
 }
 
+/* Botón para bloquear colores */
+
 .boton-bloqueo {
     position: absolute;
     top: 8px;
@@ -240,6 +242,8 @@ button:active {
     cursor: pointer;
     box-shadow: none;
 }
+
+/* Sección donde se muestra la paleta */
 
 .seccion-paleta {
     background-color: transparent;
@@ -254,6 +258,8 @@ button:active {
     margin-top: 50px;
     text-align: center;
 }
+
+/* Distribución de las paletas guardadas */
 
 #historial-paletas {
     display: flex;
@@ -271,6 +277,8 @@ button:active {
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Vista previa de las paletas guardadas */
+
 .mini-paleta {
     display: flex;
     width: 100%;
@@ -282,6 +290,8 @@ button:active {
 .mini-paleta div {
     flex: 1;
 }
+
+/* Botón para recuperar una paleta */
 
 .tarjeta-historial button {
     margin-top: 12px;

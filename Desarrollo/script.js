@@ -32,6 +32,9 @@ function crearTarjeta(color) {
     botonBloqueo.classList.add("boton-bloqueo");
     botonBloqueo.setAttribute("aria-label", "Bloquear o desbloquear color");
 
+
+// Actualizar el icono según el estado del bloqueo
+
     function actualizarCandado() {
     if (color.bloqueado) {
         botonBloqueo.innerHTML = `
@@ -56,6 +59,9 @@ botonBloqueo.addEventListener("click", function() {
     color.bloqueado = !color.bloqueado;
     actualizarCandado();
 });
+
+
+// Agregar el botón de bloqueo a la tarjeta
 
 vistaColor.appendChild(botonBloqueo);
 
@@ -209,6 +215,9 @@ function mostrarHistorial() {
 
         const botonCargar = document.createElement("button");
         botonCargar.textContent = "Volver a usar";
+
+        
+        // Recuperar una paleta guardada
 
         botonCargar.addEventListener("click", function() {
             colores = paleta.map(function(color) {

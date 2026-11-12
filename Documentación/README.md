@@ -1,8 +1,8 @@
 # Colori – Generador de paletas de colores
 
-Colori es una aplicación web interactiva que permite generar paletas de colores aleatorias de una manera sencilla. Además, elegir la cantidad de colores que queremos ver y cambiar entre los formato de HSL a HEX.
+Colori es una aplicación web interactiva que permite generar paletas de colores aleatorias de manera sencilla. También permite elegir la cantidad de colores que queremos visualizar y cambiar entre los formatos HSL y HEX.
 
-También se pueden bloquear los colores que más nos gusten para conservarlos al generar una nueva paleta, copiar el código HEX y guardar las combinaciones favoritas para volver a utilizarlas más adelante. 
+Además, se pueden bloquear los colores que más nos gusten para conservarlos al generar una nueva paleta, copiar sus códigos HEX y guardar las combinaciones favoritas para volver a utilizarlas más adelante.
 
 
 ## Aplicación publicada
@@ -48,11 +48,17 @@ Para publicar Colori en GitHub Pages, se utiliza GitHub Actions mediante un arch
 Los pasos para realizar el despliegue son:
 
 1. Subir los archivos del proyecto a un repositorio de GitHub.
+
 2. Ingresar al repositorio y abrir la sección **Settings**.
+
 3. Seleccionar la opción **Pages** en el menú lateral.
+
 4. En el apartado **Build and deployment**, seleccionar **GitHub Actions** como fuente de publicación.
+
 5. Subir los cambios a la rama `master`. El archivo `deploy.yml` ejecutará automáticamente el proceso de publicación.
+
 6. Ingresar a la sección **Actions** para comprobar que el proceso haya finalizado correctamente.
+
 7. Una vez completado el despliegue, se podrá acceder a la aplicación mediante el enlace de GitHub Pages.
 
 
